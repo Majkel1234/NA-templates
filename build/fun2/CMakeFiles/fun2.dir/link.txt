@@ -1,0 +1,2 @@
+/usr/bin/ar cr libfun2.a  CMakeFiles/fun2.dir/fun2.cpp.o
+/usr/bin/ranlib libfun2.a

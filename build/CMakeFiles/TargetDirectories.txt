@@ -1,0 +1,6 @@
+/home/michal/Pulpit/trening/build/fun1/CMakeFiles/fun1Lib.dir
+/home/michal/Pulpit/trening/build/fun2/CMakeFiles/fun2Lib.dir
+/home/michal/Pulpit/trening/build/CMakeFiles/myProgram.dir
+/home/michal/Pulpit/trening/build/CMakeFiles/run-all.dir
+/home/michal/Pulpit/trening/build/fun1/CMakeFiles/run-fun1.dir
+/home/michal/Pulpit/trening/build/fun2/CMakeFiles/run-fun2.dir

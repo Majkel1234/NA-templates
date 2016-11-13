@@ -1,0 +1,1 @@
+/usr/bin/c++       CMakeFiles/myProgram.dir/main.cpp.o  -o myProgram -rdynamic -lfun1/fun1Lib -lfun2/fun2Lib 
