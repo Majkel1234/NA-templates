@@ -2,6 +2,10 @@
 #include <iostream>
 #include <boost/optional.hpp>
 
+#include <cstddef>
+#include <utility>
+#include <boost/optional.hpp>
+
 template<typename T>
 class container_wrapper{
 public:
@@ -35,7 +39,6 @@ public:
 private:
 	boost::optional<T> element;
 };
-
 
 
 
