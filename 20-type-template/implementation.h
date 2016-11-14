@@ -1,4 +1,6 @@
 #pragma once
+#include <iostream>
+#include <boost/optional.hpp>
 
 #include <cstddef>
 #include <utility>
@@ -7,33 +9,36 @@
 template<typename T>
 class container_wrapper{
 public:
-	container_wrapper() = default;
-	container_wrapper(const container_wrapper &arg) = default;
-	container_wrapper(container_wrapper &&arg) = default;
-	container_wrapper& operator=(const container_wrapper &arg) = default;
-	container_wrapper& operator=(container_wrapper &&arg) = default;
-	container_wrapper(T arg): _value{std::move(arg)}{
+	container_wrapper(){
+		std::cout<<"default constructor"<<std::endl;
 	}
-	size_t size() const{
-		return _value.size();
+	container_wrapper(T arg): value{std::move(arg)}{}
+	container_wrapper(const container_wrapper<T> &arg) = default;
+	container_wrapper(container_wrapper<T> &&arg) = default;
+	container_wrapper<T>& operator=(const container_wrapper<T> &arg) = default;
+	container_wrapper<T>& operator=(container_wrapper<T> &&arg) = default;
+	size_t size(){
+		return value.size();
 	}
 private:
-   T _value;
+   T value;
 };
 
 template <typename T>
 class container_wrapper<boost::optional<T>>{
 public:
 	container_wrapper() = default;
-	container_wrapper(const container_wrapper &arg) = default;
-	container_wrapper(container_wrapper &&arg) = default;
-	container_wrapper& operator=(const container_wrapper &arg) = default;
-	container_wrapper& operator=(container_wrapper &&arg) = default;
-	container_wrapper(boost::optional<T> arg): _value{std::move(arg)}{
-	}
-	size_t size() const{
-		return _value ? 1 : 0;
+	container_wrapper(boost::optional<T> arg): element(std::move(arg)){}
+	container_wrapper(const container_wrapper<boost::optional<T>>&obj) = default;
+	container_wrapper(container_wrapper<boost::optional<T>>&&) = default;
+	container_wrapper& operator=(const container_wrapper<boost::optional<T>>&) = default;
+	container_wrapper& operator=(container_wrapper<boost::optional<T>>&&) = default;
+	size_t size(){
+		return (element)? 1 : 0;
 	}
 private:
-   boost::optional<T> _value;
+	boost::optional<T> element;
 };
+
+
+

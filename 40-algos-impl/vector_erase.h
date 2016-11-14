@@ -1,16 +1,16 @@
 #pragma once
+#include <vector>
+#include <iostream>
 
 #include <algorithm>
 
 // define vector_erase here
-
-template <typename T>
-void vector_erase(T &vect, const typename T::value_type &val){
-/*	for(auto it = vect.begin(); it!= vect.end();++it){
-		if(*it == val){
-			vect.erase(it);
+template <typename T,typename T1 = std::allocator<T>>
+void vector_erase(std::vector<T,T1> &vect,const T &&el){
+	for(auto it = vect.begin();it!=vect.end();++it){
+		if(*it == el){
+			auto it2 = it--;
+			vect.erase(it2);
 		}
-	} */
-	vect.erase(std::remove(vect.begin(),vect.end(),val),vect.end());
+	}
 }
-

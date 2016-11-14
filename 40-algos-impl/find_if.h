@@ -2,15 +2,15 @@
 
 
 
-namespace training
-{
-template<typename InputIt, typename UnaryPredicate>
-InputIt find_if(InputIt begin, InputIt end, UnaryPredicate pred){
-	InputIt iter;
-	for(iter = begin ;iter != end; ++iter){
-		if(pred(*iter)) break;	
+namespace training{
+	template<typename InputIt, typename UnaryPredicate>
+	InputIt find_if(InputIt begin, InputIt end, UnaryPredicate pred){
+		while(begin!=end){
+			if(pred(*begin)) return begin;
+			++begin;
+		}
+		return begin;
+	    }
 	}
-	return iter;
-   }
 }
 

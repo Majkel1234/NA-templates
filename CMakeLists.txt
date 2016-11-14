@@ -1,9 +1,9 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 2.8)
 
 project(templates-examples CXX)
 
 add_definitions(-DCATCH_CONFIG_MAIN)
-add_definitions(-std=c++1z -Wall -Wextra -Wpedantic -Werror -Wfatal-errors)
+add_definitions(-std=c++11 -Wall -Wextra -Wpedantic -Werror -Wfatal-errors)
 include_directories(vendor SYSTEM)
 
 add_custom_target(run-all)
